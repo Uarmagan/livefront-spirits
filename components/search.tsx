@@ -1,8 +1,12 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { ReactElement } from 'react';
 
-export const Search = ({ setFilter }: any): ReactElement => {
-  const handleSubmit = (e: any) => {
+export const Search = ({
+  setFilter,
+}: {
+  setFilter: (arg: string) => void;
+}): ReactElement => {
+  const handleSubmit = (e: any): void => {
     e.preventDefault();
     setFilter(e.target.search.value);
   };

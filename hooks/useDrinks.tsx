@@ -4,7 +4,7 @@ import { Drink, DrinksListSchema } from '../types/drinks';
 
 const baseUrl = 'https://thecocktaildb.com/api/json/v1/1';
 
-const fetchDrinks = async (): Promise<Drink[]> => {
+const fetchDrinks = async (filter: string): Promise<Drink[]> => {
   const data = await axios.get(`${baseUrl}/search.php?s=${filter}`);
   return DrinksListSchema.parse(data.data.drinks);
 };
@@ -12,7 +12,7 @@ const fetchDrinks = async (): Promise<Drink[]> => {
 export const useDrinks = (filter: string) => {
   return useQuery({
     queryKey: ['search', filter],
-    queryFn: fetchDrinks,
+    queryFn: () => fetchDrinks(filter),
     keepPreviousData: true,
     enabled: filter.length > 2,
     refetchOnWindowFocus: false,
