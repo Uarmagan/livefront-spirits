@@ -1,6 +1,5 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { ReactElement, useState } from 'react';
-import { useDrinks } from '../hooks/useDrinks';
+import { ReactElement } from 'react';
 
 export const Search = ({ setFilter }: any): ReactElement => {
   const handleSubmit = (e: any) => {
@@ -23,11 +22,6 @@ export const Search = ({ setFilter }: any): ReactElement => {
             placeholder="Search"
             type="search"
             name="search"
-            // onChange={(e) => {
-            //   const val = e.target.value;
-            //   setSearch(val);
-            // }}
-            // value={search}
           />
         </div>
       </form>
