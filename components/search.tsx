@@ -11,7 +11,7 @@ export const Search = ({
     setFilter(e.target.search.value);
   };
   return (
-    <div className="flex flex-1 justify-between px-4 py-3">
+    <div className="flex justify-between py-3">
       <form className="flex w-full md:ml-0 " onSubmit={handleSubmit}>
         <label htmlFor="search-field" className="sr-only">
           Search
