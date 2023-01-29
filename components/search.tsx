@@ -1,10 +1,15 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
+import { useDrinks } from '../hooks/useDrinks';
 
-export const Search = (): ReactElement => {
+export const Search = ({ setFilter }: any): ReactElement => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setFilter(e.target.search.value);
+  };
   return (
     <div className="flex flex-1 justify-between px-4 py-3">
-      <form className="flex w-full md:ml-0 " action="#" method="GET">
+      <form className="flex w-full md:ml-0 " onSubmit={handleSubmit}>
         <label htmlFor="search-field" className="sr-only">
           Search
         </label>
@@ -18,6 +23,11 @@ export const Search = (): ReactElement => {
             placeholder="Search"
             type="search"
             name="search"
+            // onChange={(e) => {
+            //   const val = e.target.value;
+            //   setSearch(val);
+            // }}
+            // value={search}
           />
         </div>
       </form>
