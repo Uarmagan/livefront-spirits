@@ -4,17 +4,13 @@ import { DrinkItem } from './drinkItem';
 import { DrinkSelection } from './drinkSelection';
 export const DrinksList = ({
   drinks,
-  isLoading,
+  setSelectedDrink,
 }: {
   drinks: Drink[];
-  isLoading: boolean;
+  setSelectedDrink: (drink: Drink | null) => void;
 }): ReactElement => {
-  const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
-
-  if (isLoading) return <div>Loading...</div>;
-
   return (
-    <div className="grid lg:grid-cols-[3fr_1fr] gap-x-3 h-screen">
+    <>
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 h-12">
         {drinks?.map((drink: Drink) => (
           <DrinkItem
@@ -24,7 +20,6 @@ export const DrinksList = ({
           />
         ))}
       </ul>
-      <DrinkSelection selectedDrink={selectedDrink} />
-    </div>
+    </>
   );
 };

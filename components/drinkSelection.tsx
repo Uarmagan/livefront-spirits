@@ -6,7 +6,7 @@ export const DrinkSelection = ({
   selectedDrink: Drink | null;
 }) => {
   return (
-    <div className="hidden lg:block  bg-white rounded-xl shadow-lg p-6 h-5/6">
+    <div className="hidden md:block  bg-white rounded-xl shadow-lg p-6 h-5/6">
       {!selectedDrink && <h1 className="text-lg font-bold">Select a drink</h1>}
       {selectedDrink && (
         <div className="flex flex-col">
