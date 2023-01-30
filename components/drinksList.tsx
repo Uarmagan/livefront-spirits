@@ -1,7 +1,7 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { Drink } from '../types/drinks';
 import { DrinkItem } from './drinkItem';
-import { DrinkSelection } from './drinkSelection';
+
 export const DrinksList = ({
   drinks,
   setSelectedDrink,

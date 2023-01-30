@@ -22,7 +22,10 @@ const Home: NextPage = () => {
           ) : (
             <DrinksList drinks={data} setSelectedDrink={setSelectedDrink} />
           )}
-          <DrinkSelection selectedDrink={selectedDrink} />
+          <DrinkSelection
+            selectedDrink={selectedDrink}
+            setSelectedDrink={setSelectedDrink}
+          />
         </div>
       </div>
     </div>
