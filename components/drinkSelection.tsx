@@ -12,6 +12,7 @@ export const DrinkSelection = ({
   return (
     <>
       <div
+        data-testid="drink-selection-section"
         className={` ${
           selectedDrink ? 'mobile-drink-selector' : 'desktop-drink-selector'
         } `}

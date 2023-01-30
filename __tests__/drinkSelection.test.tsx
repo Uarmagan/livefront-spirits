@@ -1,6 +1,6 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { DrinkSelection } from '../components/drinkSelection';
-import { mockDrink } from '../__fixtures__';
+import { mockDrinkMarg } from '../__fixtures__';
 
 describe('DrinkSelection', () => {
   let props: { selectedDrink: any; setSelectedDrink: any };
@@ -18,18 +18,18 @@ describe('DrinkSelection', () => {
   });
 
   it('renders selected drink details when there is a selected drink', () => {
-    props.selectedDrink = mockDrink;
+    props.selectedDrink = mockDrinkMarg;
     render(<DrinkSelection {...props} />);
-    expect(screen.getByText(mockDrink.strDrink)).toBeInTheDocument();
-    expect(screen.getByAltText(mockDrink.strDrink)).toBeInTheDocument;
-    expect(screen.getByText(mockDrink.strIngredient1)).toBeInTheDocument();
-    expect(screen.getByText(mockDrink.strIngredient2)).toBeInTheDocument();
-    expect(screen.getByText(mockDrink.strIngredient3)).toBeInTheDocument();
-    expect(screen.getByText(mockDrink.strInstructions)).toBeInTheDocument();
+    expect(screen.getByText(mockDrinkMarg.strDrink)).toBeInTheDocument();
+    expect(screen.getByAltText(mockDrinkMarg.strDrink)).toBeInTheDocument;
+    expect(screen.getByText(mockDrinkMarg.strIngredient1)).toBeInTheDocument();
+    expect(screen.getByText(mockDrinkMarg.strIngredient2)).toBeInTheDocument();
+    expect(screen.getByText(mockDrinkMarg.strIngredient3)).toBeInTheDocument();
+    expect(screen.getByText(mockDrinkMarg.strInstructions)).toBeInTheDocument();
   });
 
   it('closes the selected drink details when the close button is clicked', () => {
-    props.selectedDrink = mockDrink;
+    props.selectedDrink = mockDrinkMarg;
     render(<DrinkSelection {...props} />);
     // tell test to be mobile view so that the close button is visible
     Object.defineProperty(window, 'innerWidth', {
@@ -38,6 +38,11 @@ describe('DrinkSelection', () => {
       value: 300,
     });
     fireEvent.click(screen.getByRole('button'));
+    waitFor(() => {
+      expect(
+        screen.queryByTestId('drink-selection-section')
+      ).not.toBeInTheDocument();
+    });
     expect(props.setSelectedDrink).toHaveBeenCalledWith(null);
   });
 
