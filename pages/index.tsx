@@ -8,10 +8,8 @@ import { Drink } from '../types/drinks';
 
 const Home: NextPage = () => {
   const [filter, setFilter] = useState<string>('');
-  const { data, isLoading } = useDrinks(filter);
+  const { data, isLoading, isError } = useDrinks(filter);
   const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
-
-  if (isLoading) return <div>Loading...</div>;
   return (
     <div className="h-screen">
       <div className="col-span-10 bg-gray-100 flex flex-col px-4 gap-6 ">
@@ -20,7 +18,12 @@ const Home: NextPage = () => {
           {isLoading ? (
             <div>Loading...</div>
           ) : (
-            <DrinksList drinks={data} setSelectedDrink={setSelectedDrink} />
+            <DrinksList
+              drinks={data}
+              setSelectedDrink={setSelectedDrink}
+              isLoading={isLoading}
+              isError={isError}
+            />
           )}
           <DrinkSelection
             selectedDrink={selectedDrink}

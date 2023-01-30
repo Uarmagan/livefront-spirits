@@ -1,4 +1,4 @@
-export const drink = {
+export const mockDrink = {
   idDrink: '11007',
   strDrink: 'Margarita',
   strDrinkThumb:

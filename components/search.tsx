@@ -12,7 +12,11 @@ export const Search = ({
   };
   return (
     <div className="flex justify-between py-3">
-      <form className="flex w-full md:ml-0 " onSubmit={handleSubmit}>
+      <form
+        className="flex w-full md:ml-0"
+        data-testid="search-form"
+        onSubmit={handleSubmit}
+      >
         <div className="flex flex-auto">
           <label htmlFor="search-field" className="sr-only">
             Search

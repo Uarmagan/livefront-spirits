@@ -14,7 +14,7 @@ export const DrinkItem = ({
       <div className="aspect-square relative w-full">
         <Image
           src={drink.strDrinkThumb as string}
-          alt="tasty drink"
+          alt={drink.strDrink}
           fill
           className=" rounded-t-lg"
         />
