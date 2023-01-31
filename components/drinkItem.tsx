@@ -20,9 +20,11 @@ export const DrinkItem = ({
         />
       </div>
       <div className="p-3">
-        <h1 className="tracking-wider">{drink.strDrink}</h1>
+        <h1 className="tracking-widest md:tracking-wider text-xl md:text-md">
+          {drink.strDrink}
+        </h1>
         <button
-          className="mt-2 cursor-pointer text-blue-700 text-xs"
+          className="mt-2 cursor-pointer text-blue-700 text-lg md:text-sm"
           onClick={() => setSelectedDrink(drink)}
         >
           See The Recipe

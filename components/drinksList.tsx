@@ -20,7 +20,7 @@ export const DrinksList = ({
 
   if (drinks?.length === 0)
     return (
-      <div className=" text-gray-500">
+      <div className=" text-gray-600 text-2xl">
         Welcome to the Cocktail Recipe App. Search for your favorite cocktail and
         press enter!
       </div>

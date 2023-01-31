@@ -18,7 +18,7 @@ export const DrinkSelection = ({
         } `}
       >
         {!selectedDrink && (
-          <h1 className="text-lg font-bold text-gray-600 text-center">
+          <h1 className="text-lg font-bold text-gray-600 text-center font-serif">
             Choose a Drink
           </h1>
         )}
