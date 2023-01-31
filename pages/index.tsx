@@ -8,7 +8,7 @@ import { Drink } from '../types/drinks';
 
 const Home: NextPage = () => {
   const [filter, setFilter] = useState<string>('');
-  const { data, isLoading, isError } = useDrinks(filter);
+  const { data, isLoading, isFetching, isError } = useDrinks(filter);
   const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
   return (
     <div className="h-screen">
@@ -23,6 +23,7 @@ const Home: NextPage = () => {
               drinks={data}
               setSelectedDrink={setSelectedDrink}
               isLoading={isLoading}
+              isFetching={isFetching}
               isError={isError}
             />
           )}

@@ -6,14 +6,16 @@ export const DrinksList = ({
   drinks,
   setSelectedDrink,
   isLoading,
+  isFetching,
   isError,
 }: {
   drinks: Drink[];
   setSelectedDrink: (drink: Drink | null) => void;
   isLoading: boolean;
+  isFetching: boolean;
   isError: boolean;
 }): ReactElement => {
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading && isFetching) return <div>Loading...</div>;
 
   if (isError)
     return <div>We are facing technical difficulties. Please try again.</div>;

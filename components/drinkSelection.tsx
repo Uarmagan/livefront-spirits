@@ -38,7 +38,7 @@ export const DrinkSelection = ({
                 fill
               />
             </div>
-            <h3 className="text-lg font-bold ">Ingredients:</h3>
+            <h3 className="text-lg font-bold">Ingredients:</h3>
             <ul className="flex flex-col gap-1 mb-5 ">
               {Object.keys(selectedDrink)
                 .filter(
