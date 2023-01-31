@@ -21,7 +21,8 @@ export const DrinksList = ({
   if (drinks?.length === 0)
     return (
       <div className=" text-gray-500">
-        Welcome to Spirits DB. Type something in the search field and press enter.
+        Welcome to the Cocktail Recipe App. Search for your favorite cocktail and
+        press enter!
       </div>
     );
 
