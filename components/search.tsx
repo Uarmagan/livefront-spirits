@@ -35,7 +35,7 @@ export const Search = ({
           </div>
         </div>
         <button
-          className=" text-white tracking-wide w-24 ml-5 rounded-lg bg-[#10a14c]"
+          className=" text-white tracking-wide w-24 ml-5 rounded-lg bg-[#00933d]"
           type="submit"
         >
           Search
