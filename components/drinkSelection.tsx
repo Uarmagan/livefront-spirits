@@ -51,7 +51,7 @@ export const DrinkSelection = ({
                 ))}
             </ul>
             <p className="text-lg font-bold">Instructions</p>
-            <p className="w-3/4 text-center">{selectedDrink.strInstructions}</p>
+            <p className="w-4/5 text-left">{selectedDrink.strInstructions}</p>
           </div>
         )}
       </div>
